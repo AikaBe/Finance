@@ -5,3 +5,32 @@ FinScope Analytics is a financial analytics company. We study data about clients
 
 ## ERD 
 ![ERD diagram](ERD.png)
+
+## Main analytics
+The queries are listed in the file "queries.sql"
+and the results are as follows (there's a limit of 10 listed here)
+![result](analize_result/result1.png)
+![result](analize_result/result2.png)
+
+## How to run the project
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:AikaBe/Finance.git
+   cd Finance
+
+2. Install dependencies:
+   ```bash
+   pip install psycopg2
+
+3. Run project:
+   ```bash
+   python main.py
+ 
+## Tools and resources
+1. Postgre for database :
+    You can install it by this link:
+    https://www.postgresql.org/download/windows/
+
+2. Python :
+    You can install it by this link:
+    https://www.python.org/downloads/windows/
