@@ -6,12 +6,6 @@ FinScope Analytics is a financial analytics company. We study data about clients
 ## ERD 
 ![ERD diagram](ERD.png)
 
-## Main analytics
-The queries are listed in the file "queries.sql"
-and the results are as follows (there's a limit of 10 listed here)
-![result](analize_result/result1.png)
-![result](analize_result/result2.png)
-
 ## How to run the project
 1. Clone the repository:
    ```bash
