@@ -44,12 +44,15 @@ ORDER BY month;
 -- title: Распределение клиентов по возрасту
 -- xlabel: Возраст
 -- ylabel: Количество
-SELECT EXTRACT(YEAR FROM AGE(c.birth_date)) AS age
+SELECT 
+    EXTRACT(YEAR FROM AGE(c.birth_date)) AS age,
+    COUNT(DISTINCT a.account_id) AS accounts_count
 FROM client c
 LEFT JOIN disp d ON c.client_id = d.client_id
 LEFT JOIN account a ON d.account_id = a.account_id
-WHERE c.birth_date IS NOT NULL;
-
+WHERE c.birth_date IS NOT NULL
+GROUP BY EXTRACT(YEAR FROM AGE(c.birth_date))
+ORDER BY age;
 -- name: scatter_loans
 -- type: scatter
 -- title: Кредиты: сумма против длительности

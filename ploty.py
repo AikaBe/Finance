@@ -1,35 +1,35 @@
 import pandas as pd
-from sqlalchemy import create_engine
 import plotly.express as px
+import psycopg2
 
-# Подключение к PostgreSQL
-engine = create_engine("postgresql+psycopg2://postgres:080116bs@localhost:5432/finance_db")
-
-# Загружаем данные
-df = pd.read_sql("""
-    SELECT 
-        TO_CHAR(t.date, 'YYYY-MM') AS month,
-        SUM(t.amount) AS total_amount
-    FROM trans t
-    GROUP BY TO_CHAR(t.date, 'YYYY-MM')
-    ORDER BY month
-""", engine)
-
-# Приводим месяц к строковому типу
-df['month'] = df['month'].astype(str)
-
-# Вариант 1: Scatter с анимацией и нормализованным цветом
-fig_scatter = px.scatter(
-    df,
-    x="month",
-    y="total_amount",
-    animation_frame="month",
-    size_max=30,  # ограничение размера точек
-    color="total_amount",
-    color_continuous_scale="Viridis",
-    title="Сумма транзакций по месяцам (интерактивный ползунок)",
-    labels={"month": "Месяц", "total_amount": "Сумма"}
+conn = psycopg2.connect(
+    host="localhost",
+    database="finance_db",
+    user="postgres",
+    password="080116bs"
 )
-fig_scatter.show()
 
-fig_line.show()
+query = """
+SELECT 
+    EXTRACT(YEAR FROM birth_date) AS birth_year,
+    COUNT(*) AS clients_count
+FROM client
+GROUP BY birth_year
+ORDER BY birth_year;
+"""
+
+df = pd.read_sql(query, conn)
+
+df["decade"] = (df["birth_year"] // 10) * 10
+
+fig = px.scatter(
+    df,
+    x="birth_year",
+    y="clients_count",
+    animation_frame="decade", 
+    size="clients_count",
+    color="clients_count",
+    title="Распределение клиентов по годам рождения"
+)
+
+fig.show()

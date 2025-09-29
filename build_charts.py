@@ -3,14 +3,11 @@ from sqlalchemy import create_engine
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# --- Настройки подключения к PostgreSQL ---
 engine = create_engine("postgresql+psycopg2://postgres:080116bs@localhost:5432/finance_db")
 
-# --- Папка для сохранения графиков ---
 charts_dir = "charts"
 os.makedirs(charts_dir, exist_ok=True)
 
-# --- Чтение запросов из файла ---
 queries = []
 with open("graph_guery.sql", "r", encoding="utf-8") as f:
     content = f.read()
@@ -41,7 +38,6 @@ with open("graph_guery.sql", "r", encoding="utf-8") as f:
             "sql": sql
         })
 
-# --- Функция построения и сохранения графиков ---
 def plot_graph(df, q):
     if q['type'] in ['bar', 'barh', 'pie', 'line', 'scatter']:
         df = df.dropna(subset=[df.columns[0]])
@@ -88,13 +84,11 @@ def plot_graph(df, q):
     plt.savefig(chart_file)
     plt.close()
     
-    # --- Консольный отчет ---
     print(f"[{q['name']}] {q['title']}")
     print(f"  Тип графика: {q['type']}")
     print(f"  Количество строк: {len(df)}")
     print(f"  Сохранили график: {chart_file}\n")
 
-# --- Основной цикл ---
 for q in queries:
     df = pd.read_sql(q['sql'], engine)
     plot_graph(df, q)
