@@ -1,0 +1,41 @@
+slice_name: "\u0438\u0435\u0440\u0430\u0440\u0445\u0438\u0447\u0435\u0441\u043A\u0430\
+  \u044F \u0441\u0432\u044F\u0437\u044C \u043C\u0435\u0436\u0434\u0443 \u043A\u043B\
+  \u0438\u0435\u043D\u0442\u0430\u043C\u0438, \u0438\u0445 \u0440\u0430\u0439\u043E\
+  \u043D\u0430\u043C\u0438 (district) \u0438 \u0441\u0442\u0430\u0442\u0443\u0441\u043E\
+  \u043C \u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432 (loan)."
+description: null
+certified_by: null
+certification_details: null
+viz_type: sunburst_v2
+params:
+  datasource: 13__table
+  viz_type: sunburst_v2
+  columns:
+  - district
+  - client
+  - loan_status
+  metric:
+    expressionType: SQL
+    sqlExpression: count(*)
+    column: null
+    aggregate: null
+    datasourceWarning: true
+    hasCustomLabel: false
+    label: count(*)
+    optionName: metric_19ek71qo5u9_hf1ci23kbs
+  adhoc_filters: []
+  row_limit: 1000
+  color_scheme: supersetColors
+  linear_color_scheme: superset_seq_1
+  show_labels_threshold: 5
+  label_type: key
+  number_format: SMART_NUMBER
+  date_format: smart_date
+  extra_form_data: {}
+  dashboards:
+  - 6
+query_context: '{"datasource":{"id":13,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["district","client","loan_status"],"metrics":[{"expressionType":"SQL","sqlExpression":"count(*)","column":null,"aggregate":null,"datasourceWarning":true,"hasCustomLabel":false,"label":"count(*)","optionName":"metric_19ek71qo5u9_hf1ci23kbs"}],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"13__table","viz_type":"sunburst_v2","columns":["district","client","loan_status"],"metric":{"expressionType":"SQL","sqlExpression":"count(*)","column":null,"aggregate":null,"datasourceWarning":true,"hasCustomLabel":false,"label":"count(*)","optionName":"metric_19ek71qo5u9_hf1ci23kbs"},"adhoc_filters":[],"row_limit":1000,"color_scheme":"supersetColors","linear_color_scheme":"superset_seq_1","show_labels_threshold":5,"label_type":"key","number_format":"SMART_NUMBER","date_format":"smart_date","extra_form_data":{},"dashboards":[6],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: dd6cff4c-d620-47dc-86b7-a78665e8609f
+version: 1.0.0
+dataset_uuid: 1080c61c-22ca-4948-b8b4-ab99cb6bd46b

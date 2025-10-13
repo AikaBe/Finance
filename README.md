@@ -28,3 +28,11 @@ FinScope Analytics is a financial analytics company. We study data about clients
 2. Python :
     You can install it by this link:
     https://www.python.org/downloads/windows/
+
+#### APACHE 
+username: Aizharkyn 
+password: 080116bs
+
+для карты 
+пороль 
+#080116Bs

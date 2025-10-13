@@ -1,0 +1,110 @@
+table_name: "\u043C\u0435\u0442\u0440\u0438\u043A\u0438"
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: finance_db
+schema: null
+sql: "SELECT\r\n    EXTRACT(YEAR FROM t.date) AS year,\r\n    AVG(t.amount) AS avg_amount,\r\
+  \n    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY t.amount) AS median_amount,\r\n\
+  \    100.0 * (AVG(t.amount) - LAG(AVG(t.amount)) OVER (ORDER BY EXTRACT(YEAR FROM\
+  \ t.date))) \r\n           / LAG(AVG(t.amount)) OVER (ORDER BY EXTRACT(YEAR FROM\
+  \ t.date)) AS growth_percent,\r\n    AVG(t.amount) - PERCENTILE_CONT(0.5) WITHIN\
+  \ GROUP (ORDER BY t.amount) AS difference_avg_median,\r\n    (AVG(t.amount) - MIN(AVG(t.amount))\
+  \ OVER ()) / \r\n    (MAX(AVG(t.amount)) OVER () - MIN(AVG(t.amount)) OVER ()) AS\
+  \ normalized_avg_amount\r\n\r\nFROM trans t\r\nGROUP BY EXTRACT(YEAR FROM t.date)\r\
+  \nORDER BY year;\r\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 49856a06-f6c1-4a5b-b339-478b255d80cf
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: normalized_avg_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: avg_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: growth_percent
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: year
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: difference_avg_median
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: median_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 5cbaeede-0730-47f9-af81-745d37b1ed33

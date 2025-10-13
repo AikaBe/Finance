@@ -1,0 +1,50 @@
+slice_name: Geo Visualization
+description: null
+certified_by: null
+certification_details: null
+viz_type: deck_scatter
+params:
+  datasource: 11__table
+  viz_type: deck_scatter
+  slice_id: 7
+  spatial:
+    type: latlong
+    latCol: latitude
+    lonCol: longitude
+  row_limit: 1000
+  filter_nulls: true
+  adhoc_filters: []
+  mapbox_style: mapbox://styles/mapbox/light-v9
+  autozoom: true
+  viewport:
+    longitude: 6.85236157047845
+    latitude: 31.222656842808707
+    zoom: 1
+    bearing: 0
+    pitch: 0
+  point_radius_fixed:
+    type: fix
+    value: 1000
+  point_unit: square_m
+  min_radius: 2
+  max_radius: 250
+  multiplier: 1
+  color_picker:
+    r: 0
+    g: 122
+    b: 135
+    a: 1
+  legend_position: tr
+  legend_format: SMART_NUMBER
+  color_scheme: supersetColors
+  js_columns: []
+  time_grain_sqla: null
+  granularity: null
+  extra_form_data: {}
+  dashboards:
+  - 6
+query_context: '{"datasource":{"id":11,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"time_grain_sqla":null,"having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"11__table","viz_type":"deck_scatter","slice_id":7,"spatial":{"type":"latlong","latCol":"latitude","lonCol":"longitude"},"row_limit":1000,"filter_nulls":true,"adhoc_filters":[],"mapbox_style":"mapbox://styles/mapbox/light-v9","autozoom":true,"viewport":{"longitude":6.85236157047845,"latitude":31.222656842808707,"zoom":1,"bearing":0,"pitch":0},"point_radius_fixed":{"type":"fix","value":1000},"point_unit":"square_m","min_radius":2,"max_radius":250,"multiplier":1,"color_picker":{"r":0,"g":122,"b":135,"a":1},"legend_position":"tr","legend_format":"SMART_NUMBER","color_scheme":"supersetColors","js_columns":[],"time_grain_sqla":null,"granularity":null,"extra_form_data":{},"dashboards":[6],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 21e7a00e-3715-4e1d-9ae8-ae29201c945c
+version: 1.0.0
+dataset_uuid: 83a42d3d-539c-4146-8b4c-e94e79d587bb

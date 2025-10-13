@@ -1,0 +1,51 @@
+slice_name: "\u043A\u0430\u043A\u0438\u0435 \u0441\u0442\u0430\u0442\u0443\u0441\u044B\
+  \ \u043A\u0440\u0435\u0434\u0438\u0442\u0430 \u0432\u0441\u0442\u0440\u0435\u0447\
+  \u0430\u044E\u0442\u0441\u044F \u0447\u0430\u0449\u0435 \u0432\u0441\u0435\u0433\
+  \u043E"
+description: null
+certified_by: null
+certification_details: null
+viz_type: word_cloud
+params:
+  datasource: 15__table
+  viz_type: word_cloud
+  series: word
+  metric:
+    expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: frequency
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 76
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: LONGINTEGER
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    aggregate: SUM
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: SUM(frequency)
+    optionName: metric_g02wfi52vd7_p586urvy6i9
+  adhoc_filters: []
+  row_limit: 1000
+  size_from: 10
+  size_to: 70
+  rotation: square
+  color_scheme: supersetColors
+  extra_form_data: {}
+  dashboards:
+  - 6
+query_context: '{"datasource":{"id":15,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["word"],"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"frequency","description":null,"expression":null,"filterable":true,"groupby":true,"id":76,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"LONGINTEGER","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"SUM","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"SUM(frequency)","optionName":"metric_g02wfi52vd7_p586urvy6i9"}],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"15__table","viz_type":"word_cloud","series":"word","metric":{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"frequency","description":null,"expression":null,"filterable":true,"groupby":true,"id":76,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"LONGINTEGER","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"SUM","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"SUM(frequency)","optionName":"metric_g02wfi52vd7_p586urvy6i9"},"adhoc_filters":[],"row_limit":1000,"size_from":10,"size_to":70,"rotation":"square","color_scheme":"supersetColors","extra_form_data":{},"dashboards":[6],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: a30f017f-9698-4b10-b2b9-75c1650ae584
+version: 1.0.0
+dataset_uuid: 37964149-1c20-46ed-8a2b-8c84f05f0cb3

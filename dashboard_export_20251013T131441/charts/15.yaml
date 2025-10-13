@@ -1,0 +1,54 @@
+slice_name: "\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u0437\u0430\u0446\u0438\
+  \u044F \u0441\u0443\u043C\u043C\u044B \u0442\u0440\u0430\u043D\u0437\u0430\u043A\
+  \u0446\u0438\u0438, \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E \u043F\
+  \u043E \u0431\u0430\u043B\u0430\u043D\u0441\u0443"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 21__table
+  viz_type: table
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    date: true
+  metrics: []
+  all_columns:
+  - trans_id
+  - account_id
+  - date
+  - amount
+  - balance
+  - type
+  - operation
+  - amount_category
+  - balance_category
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    subject: date
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  order_by_cols: []
+  order_desc: true
+  row_limit: 1000
+  server_page_length: 10
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 6
+query_context: '{"datasource":{"id":21,"type":"table"},"force":false,"queries":[{"filters":[{"col":"date","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["trans_id","account_id","date","amount","balance","type","operation","amount_category","balance_category"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"21__table","viz_type":"table","query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"date":true},"metrics":[],"all_columns":["trans_id","account_id","date","amount","balance","type","operation","amount_category","balance_category"],"percent_metrics":[],"adhoc_filters":[{"clause":"WHERE","subject":"date","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","expressionType":"SIMPLE"}],"order_by_cols":[],"order_desc":true,"row_limit":1000,"server_page_length":10,"table_timestamp_format":"smart_date","allow_render_html":true,"show_cell_bars":true,"color_pn":true,"comparison_color_scheme":"Green","comparison_type":"values","extra_form_data":{},"dashboards":[6],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 6a2f9b7e-953d-46e4-8776-79978a488263
+version: 1.0.0
+dataset_uuid: 75594dcf-0928-42a1-8f7b-ab18dc0f9171

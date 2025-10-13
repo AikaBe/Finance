@@ -1,0 +1,70 @@
+table_name: loan_counts_to_districts
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: finance_db
+schema: public
+sql: "SELECT\r\n  d.A2   AS district,      -- \u0437\u0430\u043C\u0435\u043D\u0438\
+  \u043B d.district_name \u043D\u0430 d.A2\r\n  l.status AS loan_status,\r\n  SUM(l.amount)\
+  \ AS total_loan_amount\r\nFROM loan l\r\nLEFT JOIN account a ON l.account_id = a.account_id\r\
+  \nLEFT JOIN district d ON a.district_id = d.district_id\r\nWHERE l.status IS NOT\
+  \ NULL\r\nGROUP BY d.A2, l.status\r\nORDER BY d.A2, l.status;\r\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: db711e14-3e65-4b24-87b9-5b1987f15d14
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: total_loan_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: loan_status
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 5cbaeede-0730-47f9-af81-745d37b1ed33
