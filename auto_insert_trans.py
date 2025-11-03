@@ -9,7 +9,7 @@ conn = psycopg2.connect(
     user="postgres",
     password="080116bs",
     host="localhost",
-    port="5432"
+    port="5433"
 )
 
 def get_next_id(cur, table, id_field):

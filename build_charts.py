@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 import matplotlib.pyplot as plt
 
-engine = create_engine("postgresql+psycopg2://postgres:080116bs@localhost:5432/finance_db")
+engine = create_engine("postgresql+psycopg2://postgres:080116bs@localhost:5433/finance_db")
 
 charts_dir = "charts"
 os.makedirs(charts_dir, exist_ok=True)

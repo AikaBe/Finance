@@ -6,7 +6,8 @@ conn = psycopg2.connect(
     host="localhost",
     database="finance_db",
     user="postgres",
-    password="080116bs"
+    password="080116bs",
+     port="5433"
 )
 
 query = """
