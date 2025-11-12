@@ -57,7 +57,7 @@ def fetch_weather_data():
 if __name__ == '__main__':
     exporter_info.info({'version': '1.0', 'author': 'Student', 'sources': 'Open-Meteo API'})
     start_http_server(8000)  # Порт 8000 для Prometheus
-    print("✅ Custom API exporter started on port 8000")
+    print(" Custom API exporter started on port 8000")
 
     while True:
         fetch_weather_data()
